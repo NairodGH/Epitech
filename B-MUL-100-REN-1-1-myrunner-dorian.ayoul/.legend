@@ -1,0 +1,20 @@
+  v     ^   v     ^   ^   vv^v^  v     ^ v  ^^^v              
+      !       !   !   !   !!  !      ! !   !      ! !!        
+                                              <>           $  
+@                      123                   <8823 0  12222223
+22>     <222>      123 456  <> 13       0   <55556    45555556
+558223 1858583 123 456 789  88    123 0   0 888889    78888889
+
+Legend:
+    ^v = the player height increases/decreases by 1 block
+    ! = the player falls if he doesn't press the space bar
+    0123456789<> = blocks constituting the map
+    @ = player position
+    $ = level end
+    You can modify everything according to the shown above pattern;
+    -1rst line for the player height increase/decrease (stackable with falls)
+    -2nd line for the player falls (stackable with the height changes)
+    -of course there must be an end
+    -map can be as long (and as high depending on the window size) as you want but the whole has to be rectangle-shaped (space = air)
+    -the very bottom-left of the map has to be a block (reference block) with the player starting above (no matter the starting height)
+    -none of the above rules apply if you want to make a cool glitchy level ;) Have fun !
