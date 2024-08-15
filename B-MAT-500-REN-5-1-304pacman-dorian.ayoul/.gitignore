@@ -1,0 +1,8 @@
+.vscode
+build
+map*
+*.o
+*.exe
+*.bat
+*.pdb
+*.txt
