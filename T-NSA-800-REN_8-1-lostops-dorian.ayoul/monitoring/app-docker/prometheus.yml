@@ -1,0 +1,26 @@
+# /etc/prometheus/prometheus.yml
+
+global:
+  scrape_interval: 15s
+  external_labels:
+    origin_prometheus: prometheus01
+
+alerting:
+  alertmanagers:
+    - static_configs:
+      - targets: ['localhost:9093']
+
+scrape_configs:
+  - job_name: 'prometheus'
+    scrape_interval: 5s
+    static_configs:
+      - targets: ['localhost:9090']
+  - job_name: alertmanager
+    static_configs:
+      - targets: ['localhost:9093']
+  - job_name: node
+    static_configs:
+      - targets: ['localhost:9100']
+
+rule_files:
+  - "prometheus.rules.yml"

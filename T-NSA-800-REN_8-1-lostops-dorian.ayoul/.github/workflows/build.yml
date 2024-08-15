@@ -1,0 +1,39 @@
+name: build
+
+on:
+  push:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository code
+        uses: actions/checkout@v2
+      - name: Build the image
+        run: docker-compose build
+      - name: Tag the image
+        run: docker tag t-nsa-800_app nexus.gabrielhamel.fr/repository/app-docker/web-php:1.0
+      - name: Login to Nexus Docker registry
+        uses: docker/login-action@v1
+        with:
+          username: ${{ vars.NEXUS_USERNAME }}
+          password: ${{ secrets.NEXUS_PASSWORD }}
+          registry: nexus.gabrielhamel.fr
+      - name: Push the image
+        run: docker push nexus.gabrielhamel.fr/repository/app-docker/web-php:1.0
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Start the image with SSH
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ vars.APP_WEB_HOST }}
+          username: ${{ vars.APP_WEB_USERNAME }}
+          passphrase: ${{ secrets.APP_WEB_PASSWORD }}
+          key: ${{ secrets.SSH_KEY_APP_WEB }}
+          port: ${{ vars.APP_WEB_PORT }}
+          script: |
+            sudo docker login https://nexus.gabrielhamel.fr/ -u ${{ vars.NEXUS_USERNAME }} -p "${{ secrets.NEXUS_PASSWORD }}"
+            sudo docker stop app-web || true
+            sudo docker rm app-web || true
+            sudo docker run -d -p "8081:80" --name app-web -v web-app-vol --env APP_ENV="${{ vars.APP_ENV }}" --env APP_DEBUG="${{ vars.APP_DEBUG }}" --env APP_KEY="${{ vars.APP_KEY }}" --env DB_CONNECTION="${{ vars.DB_CONNECTION }}" --env DB_HOST="${{ vars.DB_HOST }}" --env DB_PORT="${{ vars.DB_PORT }}" --env DB_DATABASE="${{ vars.DB_DATABASE }}" --env DB_USERNAME="${{ vars.DB_USERNAME }}" --env DB_PASSWORD="${{ vars.DB_PASSWORD }}" nexus.gabrielhamel.fr/repository/app-docker/web-php:1.0

@@ -1,0 +1,40 @@
+# /etc/prometheus/prometheus.rules.yml
+
+groups:
+- name: nsa800_monitoring_alert_rules
+  rules:
+  - alert: HighRamUsage
+    expr: 100 - (avg_over_time(node_memory_MemAvailable_bytes[1m]) / avg_over_time(node_memory_MemTotal_bytes[1m]) * 100) > 50
+    for: 1m
+    labels:
+      severity: warning
+    annotations:
+      summary: "High RAM usage detected"
+      description: "RAM usage has been above 50% over the last 1 minute."
+
+  - alert: HighPureRamUsage
+    expr: 100 - ((avg_over_time(node_memory_MemAvailable_bytes[1m]) + avg_over_time(node_memory_Buffers_bytes[1m]) + avg_over_time(node_memory_Cached_bytes[1m])) / avg_over_time(node_memory_MemTotal_bytes[1m]) * 100) > 50
+    for: 1m
+    labels:
+      severity: warning
+    annotations:
+      summary: "High pure Ram usage detected"
+      description: "Non-reserved RAM usage has been above 50% over the last minute."
+
+  - alert: HighCPUUsage
+    expr: (1 - avg(irate(node_cpu_seconds_total{mode="idle"}[5m]))) * 100 > 70
+    for: 1m
+    labels:
+      severity: warning
+    annotations:
+      summary: "High CPU usage detected"
+      description: "CPU usage has been above 70% over the last 5 minutes."
+
+  - alert: UpTime
+    expr: (time() - node_boot_time_seconds{}) / 3600 > 24
+    for: 1m
+    labels:
+      severity: warning
+    annotations:
+      summary: "Uptime too long"
+      description: "The instance is up for more than 24 hours. Please turn off the machine for your competencies!"
