@@ -1,0 +1,9 @@
+.vscode/
+nanotekspice
+*.o
+B-OOP-400_nanotekspice/
+*.nts
+zip/
+vg*
+list_action
+subject.txt
