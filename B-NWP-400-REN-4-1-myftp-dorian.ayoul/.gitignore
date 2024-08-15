@@ -1,0 +1,5 @@
+test_ftp.sh
+.vscode/
+*.o
+myftp
+bonus
