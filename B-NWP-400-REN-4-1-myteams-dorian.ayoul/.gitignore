@@ -1,0 +1,12 @@
+vincent
+*.o
+myteams_server
+myteams_cli
+a.out
+.vscode
+libmy.a
+vgcore*
+bootstrap
+c_launch.sh
+s_launch.sh
+NormEZ.rb
