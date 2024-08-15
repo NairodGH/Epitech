@@ -1,0 +1,82 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum ActionType {
+  TIME_IS_X
+  DAY_IS_X_TIME_IS_Y
+  GET_TWEETS_FROM_USER
+  POST_TWEET_FROM_BOT
+  LIKE_TWEET
+  RETWEET_TWEET
+  COMMENT_TWEET
+  SEND_PRIVATE_MESSAGE_TWITTER
+  SEND_WHISPERS_TWITCH
+  BLOCK_USER_TWITCH
+  UNBLOCK_USER_TWITCH
+  DETECT_STREAMERS_PLAY_GAMES_TWITCH
+  DETECT_USER_STREAM_GAMES_TWITCH
+  WEATHER_BY_CITY_UP
+  WEATHER_BY_CITY_DOWN
+  CRYPTO_CHECK_PRICE_UP
+  CRYPTO_CHECK_PRICE_DOWN
+  ONE_PIECE_GET_NEW_EP
+  ONE_PIECE_GET_NEW_MANGA
+  NULL
+}
+
+model Account {
+  id        Int       @id @default(autoincrement())
+  email     String    @unique
+  password  String
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+  brick     Brick[]
+  service   Service[]
+}
+
+model Brick {
+  id          Int      @id @default(autoincrement())
+  title       String
+  description String
+  active   Boolean  @default(false)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  account     Account  @relation(fields: [accountId], references: [id])
+  accountId   Int
+  action      Action[]
+}
+
+model Action {
+  id          Int      @id @default(autoincrement())
+  description String
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  isInput     Boolean
+  actionType  ActionType
+  arguments   String[]
+  brick       Brick    @relation(fields: [brickId], references: [id])
+  brickId     Int
+  service     Service  @relation(fields: [serviceId], references: [id])
+  serviceId   Int
+}
+
+model Service {
+  id                  Int      @id @default(autoincrement())
+  title               String
+  createdAt           DateTime @default(now())
+  updatedAt           DateTime @updatedAt
+  parentAccount       Account  @relation(fields: [accountId], references: [id])
+  accountId           Int
+  serviceToken        String
+  serviceTokenSecret  String
+  action              Action[]
+}

@@ -1,0 +1,8 @@
+# Development environment override
+services:
+  client_web:
+    container_name: client_web_dev
+    ports:
+      - ${FRONT_PORT}:${FRONT_PORT}
+    env_file:
+      - .env
