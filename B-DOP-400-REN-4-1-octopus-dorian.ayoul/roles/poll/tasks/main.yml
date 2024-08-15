@@ -1,0 +1,28 @@
+- name: Copy poll.tar to server root
+  copy:
+    src: poll.tar
+    dest: /root/poll.tar
+
+- name: Extract poll.tar
+  unarchive:
+    src: /root/poll.tar
+    dest: /root
+    remote_src: yes
+
+- name: Install pip3 dependency with requirements
+  pip: 
+    executable: pip3
+    requirements: /root/poll/requirements.txt
+
+- name: Copy poll.service to /etc/systemd/system/
+  copy:
+    src: /roles/poll/files/poll.service
+    dest: /etc/systemd/system/poll.service
+
+- name: Start poll.service
+  systemd: state=started name=poll daemon_reload=yes
+
+- name: Check if poll service is running
+  systemd:
+    name: poll
+    state: started

@@ -1,0 +1,45 @@
+- name: Get AdoptOpenJDK public GPG Key
+  apt_key:
+    url: https://adoptopenjdk.jfrog.io/adoptopenjdk/api/gpg/key/public/
+    state: present
+
+- name: Get AdoptOpenJDK debian buster from repository (worker is in Java)
+  apt_repository:
+    repo: deb https://adoptopenjdk.jfrog.io/adoptopenjdk/deb/ buster main
+    state: present
+
+- name: Install AdoptOpenJdk
+  apt:
+    name: adoptopenjdk-8-hotspot
+    state: present
+
+- name: Copy worker.tar to server root
+  copy:
+    src: worker.tar
+    dest: /root/worker.tar
+
+- name: Extract worker.tar
+  unarchive:
+    src: /root/worker.tar
+    dest: /root
+    remote_src: yes
+
+- name: Copy worker.service to /etc/systemd/system/
+  copy:
+    src: /roles/worker/files/worker.service
+    dest: /etc/systemd/system/worker.service
+
+- name: Resolve Maven dependency
+  shell: mvn dependency:resolve
+  args:
+    chdir: /root/worker/
+
+- name: Install Maven package
+  shell: mvn package
+  args:
+    chdir: /root/worker/
+
+- name: Check if worker service is running
+  systemd:
+    name: worker
+    state: started

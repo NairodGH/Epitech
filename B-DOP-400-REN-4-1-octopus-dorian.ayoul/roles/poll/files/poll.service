@@ -1,0 +1,9 @@
+[Unit]
+Description=Uploads poll service
+
+[Service]
+User=root
+WorkingDirectory=/root/poll/
+Restart=always
+ExecStart=flask run --host={{ REDIS_HOST }} --port={{ REDIS_PORT }}
+Environment="REDIS_HOST={{ REDIS_HOST }}" "REDIS_PORT={{ REDIS_PORT }}"

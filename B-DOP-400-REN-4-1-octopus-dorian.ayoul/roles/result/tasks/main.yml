@@ -1,0 +1,24 @@
+- name: Copy result.tar to server root
+  copy:
+    src: result.tar
+    dest: /root/result.tar
+
+- name: Extract result.tar
+  unarchive:
+    src: /root/result.tar
+    dest: /root
+    remote_src: yes
+
+- name: Install dependency
+  npm:
+    path: /root/result/package.json
+
+- name: Copy result.service to /etc/systemd/system/
+  copy:
+    src: /roles/result/files/result.service
+    dest: /etc/systemd/system/result.service
+
+- name: Check if result service is running
+  systemd:
+    name: result
+    state: started

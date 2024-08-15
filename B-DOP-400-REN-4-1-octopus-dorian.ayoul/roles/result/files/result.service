@@ -1,0 +1,9 @@
+[Unit]
+Description=Uploads result service
+
+[Service]
+User=root
+WorkingDirectory=/root/result/
+Restart=always
+ExecStart=npm start
+Environment=DB_NAME="{{ DB_NAME }}" USER_NAME="{{ USER_NAME }}" USER_PASSWORD="{{ USER_PASSWORD }}"

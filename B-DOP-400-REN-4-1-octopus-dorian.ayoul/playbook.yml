@@ -1,0 +1,29 @@
+- name: Installs useful packages (such as Git) using apt and configures instance.
+  hosts: all
+  roles:
+    - base
+
+- name: Installs Redis, sets up Redis.
+  hosts: redis
+  roles:
+    - redis
+
+- name: Installs PostgreSQL 12 and psql tool, creates a user paul with the password democracyIsFragile and limited permissions, creates the schema of the database paul.
+  hosts: postgresql
+  roles:
+    - postgresql
+
+- name: Uploads poll service, installs dependencies, runs the poll web client.
+  hosts: poll
+  roles:
+    - poll
+
+- name: Uploads worker service, installs dependencies, builds the worker, runs the worker.
+  hosts: worker
+  roles:
+    - worker
+
+- name: Uploads result service, installs dependencies, runs the result web client.
+  hosts: result
+  roles:
+    - result

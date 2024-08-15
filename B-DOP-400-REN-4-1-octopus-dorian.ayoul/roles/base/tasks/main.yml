@@ -1,0 +1,24 @@
+- name: Installs useful packages (such as Git) using apt
+  apt:
+    name: "{{ item }}"
+    state: present
+    update_cache: yes
+  with_items:
+    - git
+    - unzip
+    - curl
+    - python-psycopg2
+    - python3-pip
+    - python3-dev
+    - netcat
+    - redis
+    - zsh
+    - nodejs
+    - npm
+    - maven
+    - apt-transport-https
+    - ca-certificates
+    - wget
+    - dirmngr
+    - gnupg
+    - software-properties-common

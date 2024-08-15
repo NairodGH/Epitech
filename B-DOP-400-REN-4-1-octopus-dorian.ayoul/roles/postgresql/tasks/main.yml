@@ -1,0 +1,48 @@
+- name: Get .asc PGP Key from repository (pgcrypto security)
+  apt_key:
+    url: https://www.postgresql.org/pub/repos/apt/ACCC4CF8.asc
+    state: present
+
+- name: Get PostgreSQL debian buster from repository
+  apt_repository:
+    repo: deb http://apt.postgresql.org/pub/repos/apt/dists/ buster-pgdg main
+    state: present
+
+- name: Install PostgreSQL12
+  apt:
+    name: postgresql
+    state: present
+
+- name: Check if Postgresql is running
+  service:
+    name: postgresql
+    state: started
+
+- name: Create app database
+  postgresql_db:
+    state: present
+    name: "{{ DB_NAME }}"
+  become: yes
+  become_user: postgres
+
+- name: Create db user (limited permissions)
+  postgresql_user:
+    state: present
+    db: "{{ DB_NAME }}"
+    name: "{{ USER_NAME }}"
+    password: "{{ USER_PASSWORD }}"
+    priv: ALL
+  become: yes
+  become_user: postgres
+
+- name: Copy schema.sql script to serv
+  copy:
+    src: /roles/postgresql/files/schema.sql
+    dest: /tmp/schema.sql
+
+- name: Create schema of the database
+  postgresql_query:
+    db: "{{ DB_NAME }}"
+    path_to_script: /tmp/schema.sql
+  become: true
+  become_user: postgres

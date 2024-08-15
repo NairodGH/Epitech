@@ -1,0 +1,9 @@
+[Unit]
+Description=Uploads worker service
+
+[Service]
+User=root
+WorkingDirectory=/root/worker/
+Restart=always
+ExecStart=java -jar worker-jar-with-dependencies.jar
+Environment=DB_NAME="{{ DB_NAME }}" USER_NAME="{{ USER_NAME }}" USER_PASSWORD="{{ USER_PASSWORD }}"
