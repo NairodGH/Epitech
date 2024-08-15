@@ -1,0 +1,7 @@
+.vscode
+build
+*.txt
+*.exe
+*.bat
+*.pdb
+*.csv
