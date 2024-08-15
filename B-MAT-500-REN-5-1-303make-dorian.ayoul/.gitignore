@@ -1,0 +1,11 @@
+.vscode
+*.o
+303make
+MakefileTest
+
+CMake*
+build
+303make_*
+*.bat
+*.exe
+*.pdb
