@@ -1,0 +1,5 @@
+set -r oui; set oui
+set saucisse; set -r saucisse; set saucisse
+set xd; set | grep xd
+set uwu=oui; set uwu = non; set | grep uwu
+set oui .; set | grep oui

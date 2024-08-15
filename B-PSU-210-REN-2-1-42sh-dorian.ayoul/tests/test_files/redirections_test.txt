@@ -1,0 +1,5 @@
+ls > ls
+ls > ls -l
+ls >> ls
+ls >> ls -l
+cat < ./tests/test_files/redirections_test.txt

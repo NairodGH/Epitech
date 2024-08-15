@@ -1,0 +1,5 @@
+ls a | rev && ls
+ls | rev || ls
+ls a || ls && ls a ; ls
+ls a && ls | rev || ls
+ls || ls a | rev && ls

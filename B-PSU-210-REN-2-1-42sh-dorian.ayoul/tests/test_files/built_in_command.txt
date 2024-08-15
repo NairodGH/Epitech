@@ -1,0 +1,6 @@
+unsetenv HOME ; cd
+cd lol
+cd .. ; pwd
+cd src/ ; pwd
+cd .. ; cd - ; pwd
+cd .. ; cd - ; cd .. ; cd lol; pwd

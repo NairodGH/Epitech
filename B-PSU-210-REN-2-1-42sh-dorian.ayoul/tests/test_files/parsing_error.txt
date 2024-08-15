@@ -1,0 +1,26 @@
+
+ls &&
+&& ls
+&&
+;;;;;;;;
+ls < | ls
+ls | ls
+ls |
+| ls
+|
+<
+< ls
+ls <
+ls < |
+&& > ls
+ls ; ls
+ls < ;
+ls | | ls
+ls || ls
+ls ||
+|| ls
+||
+ls | lol | cat
+ls | ls | ls
+ls > lol | cat
+ls < ls | ls
