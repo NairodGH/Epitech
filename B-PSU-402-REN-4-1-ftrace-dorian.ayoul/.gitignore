@@ -1,0 +1,12 @@
+*.out
+*.o
+*.so
+*.a
+*.gcda
+*.gcno
+.vscode
+ftrace
+bootstrap
+Dockerfile
+test*
+lol
