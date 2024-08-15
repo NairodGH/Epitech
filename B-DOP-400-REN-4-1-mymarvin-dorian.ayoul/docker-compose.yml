@@ -1,0 +1,21 @@
+version: "3"
+services:
+  jenkins:
+    privileged: true
+    build: .
+    image: jenkins/jenkins:lts
+    user: root
+    ports:
+      - "8080:8080"
+    volumes:
+      - "jenkins_home:/var/jenkins_home"
+      - ./my_marvin.yml:/var/jenkins_home/my_marvin.yml
+    environment:
+      CASC_JENKINS_CONFIG: /var/jenkins_home/my_marvin.yml
+      JAVA_OPTS: -Djenkins.model.Jenkins.crumbIssuerProxyCompatibility=true -Djenkins.install.runSetupWizard=false -Dpermissive-script-security.enabled=true
+      USER_CHOCOLATEEN_PASSWORD: "pain au chocolat"
+      USER_VAUGIE_G_PASSWORD: "Garanced"
+      USER_I_DONT_KNOW_PASSWORD: "idk"
+      USER_NASSO_PASSWORD: "nassus"
+volumes:
+    jenkins_home:
