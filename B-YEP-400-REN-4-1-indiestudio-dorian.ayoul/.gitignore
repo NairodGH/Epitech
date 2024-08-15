@@ -1,0 +1,32 @@
+#bootstrap related
+bootstrap
+cross_platform
+
+#vscode/visual studio related
+.vscode
+.vs
+
+#compilation/building result related
+out
+build
+lib
+bin
+_deps
+
+#final executables/dependencies related
+bomberman
+*.dll
+*.exe
+
+#Cmake related
+CMakeFiles
+CMakeSettings.json
+CMakeCache.txt
+CPackConfig.cmake
+CPackSourceConfig.cmake
+cmake_install.cmake
+Makefile
+resources/last_map.txt
+
+#dorian related
+dorian

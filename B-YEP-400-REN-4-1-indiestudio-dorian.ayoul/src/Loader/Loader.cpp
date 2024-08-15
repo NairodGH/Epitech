@@ -1,0 +1,173 @@
+/*
+** EPITECH PROJECT, 2022
+** Loader.cpp
+** File description:
+** Loader
+*/
+
+#include "Loader.hpp"
+
+using namespace neo;
+
+Loader::Loader(std::shared_ptr<MessageBus> messageBus) : Node(messageBus)
+{
+    this->_functionTab.push_back(std::bind(&Loader::receiveSaveMap, this, std::placeholders::_1));
+    this->_functionTab.push_back(std::bind(&Loader::receiveLoadMap, this, std::placeholders::_1));
+
+    this->sendPlayerConfig();
+    this->sendResourceList();
+}
+
+void Loader::run()
+{
+    while (this->_running) {
+        std::this_thread::sleep_for(std::chrono::milliseconds(16));
+        this->_messageBus->notify(Module::LOADER);
+    }
+}
+
+void Loader::receiveSaveMap(Packet packet)
+{
+    std::ofstream file;
+
+    file.open("resources/last_map.txt", std::fstream::app);
+    if (!file.is_open())
+        return;
+    file.clear();
+    while (packet.checkSize(1)) {
+        std::string line;
+        packet >> line;
+        file << line << std::endl;
+    }
+    file.close();
+}
+
+void Loader::receiveLoadMap(Packet packet)
+{
+    std::ifstream file;
+
+    file.open("resources/last_map.txt");
+    if (file.is_open()) {
+        std::string line;
+        while (std::getline(file, line))
+            packet << line;
+        this->_messageBus->sendMessage(Message(packet, CoreCommand::MAP_LOADED, Module::CORE));
+    }
+    file.close();
+}
+
+void Loader::sendPlayerConfig()
+{
+    std::vector<std::string> files = this->getFilesFromDir("resources/config/");
+    Packet packet;
+
+    for (auto &file : files) {
+        PlayerConfig conf = this->loadPlayerConfig(this->loadFile(file));
+        conf.setMode(false);
+        packet << conf;
+    }
+    this->postMessage(Message(packet, InputCommand::KEY_CONFIG, Module::INPUT));
+    packet.clear();
+    for (auto &file : files) {
+        std::filesystem::path path(file);
+        packet << path.filename().string();
+    }
+    this->postMessage(Message(packet, CoreCommand::CONFIG, Module::CORE));
+}
+
+void Loader::sendResourceList(void)
+{
+    std::vector<std::string> modelsFiles = this->getFilesFromDir("resources/models/");
+    std::vector<std::string> animationsFiles = this->getFilesFromDir("resources/animations/");
+    std::vector<std::string> texturesFiles = this->getFilesFromDir("resources/textures/");
+    std::vector<std::string> soundsFiles = this->getFilesFromDir("resources/audio/sounds/");
+    std::vector<std::string> musicsFiles = this->getFilesFromDir("resources/audio/musics/");
+    Packet packet;
+
+    for (auto &file : modelsFiles) {
+        std::filesystem::path path(file);
+        if (path.extension() == ".dae")
+            packet << 0 << path.filename().string();
+    }
+    for (auto &file : animationsFiles) {
+        std::filesystem::path path(file);
+        if (path.extension() == ".dae")
+            packet << 1 << path.filename().string();
+    }
+    packet << 3 << "Red";
+    packet << 3 << "Yellow";
+    packet << 3 << "Green";
+    packet << 3 << "Blue";
+    for (auto &file : texturesFiles) {
+        std::filesystem::path path(file);
+        if (path.extension() == ".png")
+            packet << 2 << path.filename().string();
+    }
+    this->postMessage(Message(packet, GraphicsCommand::RESOURCE_LIST, Module::GRAPHICS));
+    packet.clear();
+    for (auto &file : soundsFiles) {
+        std::filesystem::path path(file);
+        if (path.extension() == ".mp3")
+            packet << path.filename().string();
+    }
+    this->postMessage(Message(packet, AudioCommand::LOAD_SOUNDS, Module::AUDIO));
+    packet.clear();
+    for (auto &file : musicsFiles) {
+        std::filesystem::path path(file);
+        if (path.extension() == ".mp3")
+            packet << path.filename().string();
+    }
+    this->postMessage(Message(packet, AudioCommand::LOAD_MUSICS, Module::AUDIO));
+}
+
+std::vector<std::string> Loader::getFilesFromDir(std::string dir)
+{
+    std::vector<std::string> files;
+
+    for (auto &file : std::filesystem::directory_iterator(dir))
+        files.push_back(file.path().string());
+    return files;
+}
+
+std::string Loader::loadFile(std::string fileName)
+{
+    std::ifstream fileBuffer;
+    std::string buffer;
+
+    fileBuffer.open(fileName);
+    if (fileBuffer.is_open()) {
+        std::getline(fileBuffer, buffer, '\0');
+        fileBuffer.close();
+    }
+    return buffer;
+}
+
+PlayerConfig Loader::loadPlayerConfig(std::string fileContent)
+{
+    PlayerConfig playerConfig;
+    std::regex regex("(.Keyboard:\n|.Controller:\n)([^.]*)");
+    std::smatch match;
+
+    while (std::regex_search(fileContent, match, regex)) {
+        if (match[1] == ".Keyboard:\n") {
+            playerConfig.setKeyboardConfig(this->loadConfig(match[2]));
+        } else if (match[1] == ".Controller:\n") {
+            playerConfig.setControllerConfig(this->loadConfig(match[2]));
+        }
+        fileContent = match.suffix().str();
+    }
+    return playerConfig;
+}
+
+std::map<std::string, int> Loader::loadConfig(std::string fileContent)
+{
+    std::map<std::string, int> config;
+    std::regex regex("(\\S+):(\\d+)");
+    std::smatch match;
+
+    while (std::regex_search(fileContent, match, regex)) {
+        config[match[1]] = std::stoi(match[2]);
+        fileContent = match.suffix().str();
+    }
+    return config;
+}
