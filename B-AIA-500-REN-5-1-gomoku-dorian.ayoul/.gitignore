@@ -1,0 +1,10 @@
+.vscode
+build
+pbrain-gomoku-ai*
+*.txt
+*.bat
+*.pdb
+*.o
+*.log
+*.exe
+*.sh
