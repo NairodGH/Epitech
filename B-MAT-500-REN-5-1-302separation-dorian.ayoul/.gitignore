@@ -1,0 +1,4 @@
+.vscode
+example*
+*.o
+302separation
