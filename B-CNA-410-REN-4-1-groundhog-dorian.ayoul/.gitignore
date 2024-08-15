@@ -1,0 +1,5 @@
+inputs
+*.o
+groundhog
+.vscode/
+groundhog_example_input.csv
