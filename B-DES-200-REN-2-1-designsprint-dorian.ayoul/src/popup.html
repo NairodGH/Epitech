@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+
+<script src="socket.io.js"></script>
+<script src="client.js"></script>
+
+<html lang="en" >
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="./style.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+        <script src="script.js"></script>
+    </head>
+    <body>
+        <div class="wrapper">
+            <div class="container">
+                <h1>Garrasi</h1>
+                <h3 id="connection"></h3>
+                <h2 id="comment1"></h2>
+                <h2 id="comment2"></h2>
+                <h2 id="comment3"></h2>
+                <form action="http://localhost:4000/" method="POST">
+                    <label for="output"></label>
+                    <textarea id="output" name="message" placeholder="Comment"></textarea>
+
+                    <!-- <textarea id="output" placeholder="Comment"></textarea> -->
+                    <button type="submit" id="send">Send</button>
+                </form>
+            </div>
+            <ul class="bg-bubbles">
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+          <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+          <script src="./script.js"></script>
+    </body>
+</html>
