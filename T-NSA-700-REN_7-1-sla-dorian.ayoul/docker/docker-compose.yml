@@ -1,0 +1,30 @@
+version: "3"
+
+services:
+  frontend:
+    build: ./frontend
+    volumes:
+      - frontend-data:/data
+    ports:
+      - "2222:22"
+      - "8080:80"
+
+  backend:
+    build: ./backend
+    volumes:
+      - backend-data:/data
+    ports:
+      - "2223:22"
+      - "80:80"
+
+  database:
+    build: ./database
+    volumes:
+      - db-data:/data
+    ports:
+      - "2224:22"
+
+volumes:
+  frontend-data:
+  backend-data:
+  db-data:

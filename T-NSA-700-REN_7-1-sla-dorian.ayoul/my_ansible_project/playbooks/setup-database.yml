@@ -1,0 +1,13 @@
+- hosts: database
+  gather_facts: yes
+  become: yes
+  vars_files:
+    - secrets.yml
+  vars:
+    ansible_become_pass: "{{ sudo_password }}"
+  tasks:
+    - name: Install MySQL server (Debian/Ubuntu)
+      apt:
+        name: default-mysql-server
+        state: present
+        update_cache: yes

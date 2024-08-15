@@ -1,0 +1,138 @@
+- hosts: backend
+  gather_facts: yes
+  become: yes
+  vars_files:
+    - secrets.yml
+  vars:
+    ansible_become_pass: "{{ sudo_password }}"
+  tasks:
+    - name: Download PHP 7.4
+      script: install_php.sh
+      become: yes
+
+    - name: Install php-fpm
+      apt:
+        name: php7.4-fpm
+        state: present
+      become: yes
+
+    - name: Download Composer
+      script: install_composer.sh
+
+    - name: Move Composer globally
+      become: true
+      command: mv composer.phar /usr/local/bin/composer
+
+    - name: Set permissions on Composer
+      become: true
+      file:
+        path: /usr/local/bin/composer
+        mode: "a+x"
+
+    - name: Download file
+      get_url:
+        url: https://nexus.gabrielhamel.fr/repository/back/back.tar.gz
+        dest: /tmp/back.tar.gz
+        headers:
+          Authorization: "Basic {{ nexus_credentials_back }}"
+        validate_certs: no
+
+    - name: Ensure destination directory exists
+      file:
+        path: /home/backenduser/back
+        state: directory
+
+    - name: Unarchive tar.gz file
+      unarchive:
+        src: /tmp/back.tar.gz
+        dest: /home/backenduser/back
+        remote_src: yes
+
+    - name: Build project
+      command: composer update
+      args:
+        chdir: /home/backenduser/back
+
+    - name: Build project
+      command: composer install --optimize-autoloader --no-dev
+      args:
+        chdir: /home/backenduser/back
+
+    - name: Prepare cache
+      command: php artisan config:cache
+      args:
+        chdir: /home/backenduser/back
+
+    - name: Prepare cache
+      command: php artisan event:cache
+      args:
+        chdir: /home/backenduser/back
+
+    # - name: Prepare cache
+    #   command: php artisan route:cache
+    #   args:
+    #     chdir: /home/backenduser/back
+
+    - name: Prepare cache
+      command: php artisan view:cache
+      args:
+        chdir: /home/backenduser/back
+
+    - name: Allow PHP to write to storage
+      file:
+        path: /home/backenduser/back/storage
+        state: directory
+        mode: "a+w"
+
+    - name: Allow PHP to write to bootstrap/cache
+      file:
+        path: /home/backenduser/back/bootstrap/cache
+        state: directory
+        mode: "a+w"
+
+    - name: Copy .env file
+      template:
+        src: .env-back
+        dest: /home/backenduser/back/.env
+
+    - name: Install Nginx
+      apt:
+        name: nginx
+        state: present
+      become: yes
+      become_user: root
+
+    - name: Copy Nginx configuration
+      template:
+        src: nginx-back.conf
+        dest: /etc/nginx/sites-available/back
+      become: yes
+      become_user: root
+
+    - name: Create symlink
+      file:
+        src: /etc/nginx/sites-available/back
+        dest: /etc/nginx/sites-enabled/back
+        state: link
+      become: yes
+      become_user: root
+
+    - name: Remove default Nginx configuration
+      file:
+        path: /etc/nginx/sites-enabled/default
+        state: absent
+      become: yes
+      become_user: root
+
+    - name: Restart Nginx
+      service:
+        name: nginx
+        state: restarted
+      become: yes
+      become_user: root
+
+    - name: Restart PHP
+      service:
+        name: php7.4-fpm
+        state: restarted
+      become: yes

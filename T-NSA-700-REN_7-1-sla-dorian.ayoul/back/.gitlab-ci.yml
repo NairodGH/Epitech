@@ -1,0 +1,61 @@
+variables:
+  COMPOSER_IMAGE: composer:1.10.19
+  NODE_IMAGE: node:10.18-alpine
+  ANSIBLE_IMAGE: alpinelinux/ansible
+  NPM_GLOBAL_CACHE: /cache/.npm_global_cache
+  COMPOSER_CACHE: /cache/.composer_cache
+
+stages:
+  - install
+  - test
+  - package
+  - deploy
+
+.cache_template: &cache_definition
+  cache:
+    key: $CI_COMMIT_REF_NAME
+    paths:
+      - vendor/
+      - node_modules/
+      - .npm/
+      - .composer/
+
+composer:
+  image: $COMPOSER_IMAGE
+  stage: install
+  <<: *cache_definition
+  script:
+    - composer install --no-progress --no-suggest --no-interaction
+
+npm:
+  image: $NODE_IMAGE
+  stage: install
+  <<: *cache_definition
+  script:
+    - npm install --no-progress
+
+test:
+  image: $COMPOSER_IMAGE
+  stage: test
+  <<: *cache_definition
+  script:
+    - mv .env.example .env
+    - ./vendor/bin/phpunit
+
+package:
+  stage: package
+  script:
+    - ./pipeline/package.sh
+    - curl -u "$NEXUS_USER":"$NEXUS_PASSWORD" --upload-file ./build/back.tar.gz $NEXUS_REGISTRY_URL
+
+deploy:
+  image: $ANSIBLE_IMAGE
+  stage: deploy
+  script:
+    - apk add --no-cache openssh sshpass
+    - cd pipeline/ansible
+    - 'echo "ssh_password: $SSH_PASSWORD" >> secrets.yml'
+    - 'echo "sudo_password: $SUDO_PASSWORD" >> secrets.yml'
+    - 'echo "nexus_credentials: \"{{ $NEXUS_CREDENTIALS | b64encode }}\"" >> secrets.yml'
+    - export ANSIBLE_HOST_KEY_CHECKING=False
+    - ansible-playbook -i inventory.ini deploy-laravel.yml

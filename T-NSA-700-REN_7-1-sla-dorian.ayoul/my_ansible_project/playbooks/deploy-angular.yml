@@ -1,0 +1,62 @@
+- hosts: frontend
+  gather_facts: yes
+  become: yes
+  vars_files:
+    - secrets.yml
+  vars:
+    ansible_become_pass: "{{ sudo_password }}"
+  tasks:
+    - name: Download file
+      get_url:
+        url: https://nexus.gabrielhamel.fr/repository/front/dist.tar.gz
+        dest: /tmp/dist.tar.gz
+        headers:
+          Authorization: "Basic {{ nexus_credentials_front }}"
+        validate_certs: no
+
+    - name: Ensure destination directory exists
+      file:
+        path: /home/frontenduser/front
+        state: directory
+
+    - name: Unarchive tar.gz file
+      unarchive:
+        src: /tmp/dist.tar.gz
+        dest: /home/frontenduser/front
+        remote_src: yes
+
+    - name: Install Nginx
+      apt:
+        name: nginx
+        state: present
+      become: yes
+      become_user: root
+
+    - name: Copy Nginx configuration
+      template:
+        src: nginx-front.conf
+        dest: /etc/nginx/sites-available/front
+      become: yes
+      become_user: root
+
+    - name: Create symlink
+      file:
+        src: /etc/nginx/sites-available/front
+        dest: /etc/nginx/sites-enabled/front
+        state: link
+      become: yes
+      become_user: root
+
+    - name: Remove default Nginx configuration
+      file:
+        path: /etc/nginx/sites-enabled/default
+        state: absent
+      become: yes
+      become_user: root
+
+    - name: Restart Nginx
+      service:
+        name: nginx
+        state: restarted
+      become: yes
+      become_user: root

@@ -1,0 +1,54 @@
+---
+- hosts: backend
+  gather_facts: yes
+  become: yes
+  vars_files:
+    - secrets.yml
+  vars:
+    ansible_become_pass: "{{ sudo_password }}"
+  tasks:
+    - name: Download PHP 7.4
+      script: install_php.sh
+      become: yes
+
+    - name: Download Composer
+      script: install_composer.sh
+
+    - name: Move Composer globally
+      become: true
+      command: mv composer.phar /usr/local/bin/composer
+
+    - name: Set permissions on Composer
+      become: true
+      file:
+        path: /usr/local/bin/composer
+        mode: "a+x"
+
+    - name: Download file
+      get_url:
+        url: https://nexus.gabrielhamel.fr/repository/back/back.tar.gz
+        dest: /tmp/back.tar.gz
+        headers:
+          Authorization: "Basic {{ nexus_credentials }}"
+        validate_certs: no
+
+    - name: Ensure destination directory exists
+      file:
+        path: /home/backenduser/back
+        state: directory
+
+    - name: Unarchive tar.gz file
+      unarchive:
+        src: /tmp/back.tar.gz
+        dest: /home/backenduser/back
+        remote_src: yes
+
+    - name: Build project
+      command: composer update
+      args:
+        chdir: /home/backenduser/back
+
+    - name: Build project
+      command: composer install
+      args:
+        chdir: /home/backenduser/back

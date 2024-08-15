@@ -1,0 +1,57 @@
+variables:
+  NODE_IMAGE: node:14.17.3-alpine
+  NPM_GLOBAL_CACHE: /cache/.npm_global_cache
+
+stages:
+  - install
+  - build
+  - test
+  - package
+
+.node_modules_cache_var:
+  - &node_modules_cache
+    key:
+      files:
+        - package-lock.json
+    paths:
+      - node_modules
+    policy: pull
+
+install:
+  image: $NODE_IMAGE
+  stage: install
+  cache:
+    - <<: *node_modules_cache
+      policy: push
+  script:
+    - npm i --cache $NPM_GLOBAL_CACHE
+
+build:
+  image: $NODE_IMAGE
+  stage: build
+  cache:
+    - *node_modules_cache
+  script:
+    - npm run build
+
+test:
+  image: $NODE_IMAGE
+  stage: test
+  cache:
+    - *node_modules_cache
+  script:
+    - apk add chromium
+    - export CHROME_BIN=/usr/bin/chromium-browser
+    - npm run test
+
+package:
+  image: $NODE_IMAGE
+  stage: package
+  cache:
+    - *node_modules_cache
+  before_script:
+    - apk add curl
+  script:
+    - npm run build
+    - tar -czf dist.tar.gz dist
+    - curl -u "$NEXUS_USER":"$NEXUS_PASSWORD" --upload-file ./dist.tar.gz $NEXUS_REGISTRY_URL

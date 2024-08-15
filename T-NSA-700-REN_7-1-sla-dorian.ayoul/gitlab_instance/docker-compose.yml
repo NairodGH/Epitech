@@ -1,0 +1,24 @@
+services:
+  web:
+    image: "gitlab/gitlab-ee:latest"
+    restart: always
+    hostname: "gitlab.gabrielhamel.fr"
+    ports:
+      - 127.0.0.1:10080:80
+      - 10022:22
+    environment:
+      GITLAB_OMNIBUS_CONFIG: |
+        external_url 'https://gitlab.gabrielhamel.fr'
+        nginx['listen_port'] = 80
+        nginx['listen_https'] = false
+        gitlab_rails['gitlab_shell_ssh_port'] = 10022
+    volumes:
+      - "config:/etc/gitlab"
+      - "logs:/var/log/gitlab"
+      - "data:/var/opt/gitlab"
+    shm_size: "256m"
+
+volumes:
+  config:
+  logs:
+  data:
