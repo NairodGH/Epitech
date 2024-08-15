@@ -1,0 +1,8 @@
+.vscode
+Makefile
+*.o
+*.a
+*.gcno
+*.gcda
+ex*
+test
