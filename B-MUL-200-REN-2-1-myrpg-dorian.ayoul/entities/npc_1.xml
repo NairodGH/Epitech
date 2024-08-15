@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity id="1" asset="./assets/game/entities.png">
+    <name>Grossali</name>
+    <position x="302" y="364" />
+    <rect top="7" left="7" width="21" height="42" />
+    <quest>
+        <name>PaperFind</name>
+        <type>GET_ITEM</type>
+        <needs item-id="5" item-count="1" />
+        <rewards>
+            <reward type="XP" value="126" />
+            <reward type="ITEM" item-id="1" item-count="2" />
+        </rewards>
+        <info>Find Grossali's identity papers</info>
+        <finished>Thank you! I really thought I would never find my papers... @You just saved my life! I owe you something...</finished>
+        <already-started>The quest is already underway. Could you come back when you @have found my papers to give them back to me?</already-started>
+        <content>Hi there. I'm Grossali. I recently arrived in this city@ but I lost my papers. I cannot continue to live here any @longer because the city hall wants proof that I am a resident here.@ For that, you have to find my identity papers. I seem to have lost my@ identity papers on the ground when I was walking around. @Could you help me? I have a little bit of money that @I could give you, that will allow you to enjoy your stay!</content>
+    </quest>
+    <fight health="83" defense="109">
+        <pathing>
+            <positions sleep="25">
+                <position>318,363</position>
+                <position>318,362</position>
+                <position>318,361</position>
+                <position>318,360</position>
+                <position>318,359</position>
+                <position>318,358</position>
+                <position>318,357</position>
+                <position>318,356</position>
+                <position>318,355</position>
+                <position>318,354</position>
+                <position>319,354</position>
+                <position>320,354</position>
+                <position>320,354</position>
+                <position>320,355</position>
+                <position>320,356</position>
+                <position>320,357</position>
+                <position>320,358</position>
+                <position>320,359</position>
+                <position>320,360</position>
+                <position>320,361</position>
+                <position>320,362</position>
+                <position>320,363</position>
+                <position>319,363</position>
+            </positions>
+            <image src="assets/npc1.png" sleep="100">
+                <rect left="0" top="0" width="100" height="100" />
+            </image>
+        </pathing>
+        <skills>
+            <skill name="Quick Attack" type="physical" level="1" usage="3" attack="8" />
+            <skill name="Slash" type="physical" level="2" usage="2" attack="18" />
+            <skill name="Psywave" type="magic" level="1" usage="4" attack="6" />
+        </skills>
+    </fight>
+    <discuss>I recently arrived and I love this city. What makes me @want to continue here is my work. I take care of @the forest that surrounds us. It's a lot of work to @take care of it! I hope you will enjoy this city, @I think it is beautiful. Don't hesitate to visit other @people in the city, they are just as nice as what @I am describing now. I spent 23 years of my @life in a former city, LelCity. It was frankly @not great, I don't have great memories of it. @The neighbors were loud and didn't know @how to be respectful. Not a hello, nothing. @I think I really belong here.</discuss>
+</entity>

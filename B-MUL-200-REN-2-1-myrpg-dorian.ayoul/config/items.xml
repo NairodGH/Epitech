@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<items>
+    <item>
+        <attributes id="1" max-stack="6" tile="734" category="1" />
+        <name>Health Potion</name>
+        <description>Health potion which will allow you to recover 40% of health.</description>
+        <consumptions>
+            <consumption type="HEALTH" value="40" message="You drank a health potion. +40% health" sound="assets/sounds/drink.ogg" />
+        </consumptions>
+        <asset>
+            <image src="assets/textures/tilesets/rpg_tileset.png" />
+            <rect top="112" left="1218" width="16" height="16" />
+        </asset>
+    </item>
+    <item>
+        <attributes id="2" max-stack="1" tile="828" category="1" />
+        <name>Food Drink</name>
+        <description>Food drink allows you to recover 25% of food.</description>
+        <consumptions>
+            <consumption type="FOOD" value="25" message="You drank a food potion. +25% food" sound="assets/sounds/eating.ogg" />
+        </consumptions>
+        <asset>
+            <image src="assets/textures/tilesets/rpg_tileset.png" />
+            <rect top="128" left="1218" width="16" height="16" />
+        </asset>
+    </item>
+    <item>
+        <attributes id="3" max-stack="1" tile="1938" category="2" />
+        <name>Weird Ball</name>
+        <description>A ball that hides many secrets.</description>
+        <consumptions></consumptions>
+        <asset>
+            <image src="assets/textures/tilesets/rpg_tileset.png" />
+            <rect top="320" left="928" width="16" height="16" />
+        </asset>
+    </item>
+    <item>
+        <attributes id="4" max-stack="1" tile="1491" category="1" />
+        <name>Cake</name>
+        <description>A tasty cake. +60% food. Cake is a lie.</description>
+        <consumptions>
+            <consumption type="FOOD" value="60" message="You ate a cake. +60% food" sound="assets/sounds/eating.ogg" />
+        </consumptions>
+        <asset>
+            <image src="assets/textures/tilesets/rpg_tileset.png" />
+            <rect top="236" left="1296" width="16" height="16" />
+        </asset>
+    </item>
+    <item>
+        <attributes id="5" max-stack="1" tile="1023" category="3" />
+        <name>Identity Papers</name>
+        <consumptions></consumptions>
+        <description>Identity Papers. Not yours.</description>
+        <asset>
+            <image src="assets/textures/tilesets/rpg_tileset.png" />
+            <rect top="161" left="1330" width="16" height="16" />
+        </asset>
+    </item>
+    <item>
+        <attributes id="6" max-stack="12" tile="1484" category="1" />
+        <name>Best soup ever</name>
+        <description>MAKE SOUPS GREAT AGAIN! Soups are convenient@ in cold environments to warm up.@@+50% food</description>
+        <consumptions>
+            <consumption type="FOOD" value="50" message="You drank a great soup. +50% food" sound="assets/sounds/drink.ogg" />
+        </consumptions>
+        <asset>
+            <image src="assets/textures/tilesets/rpg_tileset.png" />
+            <rect top="244" left="1182" width="16" height="16" />
+        </asset>
+    </item>
+</items>

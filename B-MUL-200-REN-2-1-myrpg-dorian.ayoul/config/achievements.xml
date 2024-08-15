@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<achievements>
+    <achievement id="1" type="DISCUSS_NPC" npc_id="1" reward_xp="163" description="Talk to an NPC" achievement_img="assets/achievements/talk_npc.png" />
+    <achievement id="2" type="QUEST_NPC" npc_id="1" reward_xp="180" description="Finish your first quest" achievement_img="assets/achievements/quest_npc.png" />
+    <achievement id="3" type="FIGHT_NPC" npc_id="1" reward_xp="362" description="Win a fight with a NPC" achievement_img="assets/achievements/fight_npc.png" />
+</achievements>

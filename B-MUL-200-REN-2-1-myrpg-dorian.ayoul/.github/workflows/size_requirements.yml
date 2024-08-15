@@ -1,0 +1,17 @@
+name: Size requirements
+on:
+  push:
+  pull_request:
+
+jobs:
+  size:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: make fclean
+        run: make fclean
+      - name: print size
+        run: |
+          echo "Size: $(du . --exclude=./.git | sed '$!d' | awk '{print $1;}')"
+      - name: check size
+        run: test $(du . --exclude=./.git | sed '$!d' | awk '{print $1;}') -lt 30000

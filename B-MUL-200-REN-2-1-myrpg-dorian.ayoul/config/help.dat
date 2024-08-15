@@ -1,0 +1,20 @@
+MY_RPG
+---------------
+
+ARGUMENTS
+    -h            see help
+    -v f          change volume settings
+    -f f          change fps settings
+
+DESCRIPTION
+    MyRPG is a role play game. The goal is to complete in-game
+    missions and kill enemies to earn XP and gain levels while
+    paying attention to your life, hunger and player attributes.
+
+USER INTERACTION
+    Use your mouse to interact with the game buttons.
+    Use your keyboard in order to move on the map (check the settings)
+    Use ESCAPE key to pause the game.
+
+WIN CONDITIONS
+    In order to end the game, complete all missions without dying

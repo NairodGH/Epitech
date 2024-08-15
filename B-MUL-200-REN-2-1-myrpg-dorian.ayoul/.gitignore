@@ -1,0 +1,24 @@
+### C ###
+# Object files
+*.o
+
+# Libraries
+*.a
+
+### IDE ###
+# VSCode
+.vscode
+
+# Jetbrain
+.idea
+.idea/
+
+### OS ###
+# MacOS
+*.DS_Store
+*.dSYM
+
+### Project ###
+my_rpg
+saves/*.xml
+screenshots/*.png

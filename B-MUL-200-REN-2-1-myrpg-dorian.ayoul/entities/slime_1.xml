@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity id="1" asset="./assets/enemies/slime.png">
+    <name>Slime 1</name>
+    <position x="318" y="363" />
+    <rect top="50" left="9" width="80" height="65" />
+    <fight health="100" defense="109">
+        <pathing>
+            <psts sleep="700">
+                <position>318,363</position>
+                <position>318,362</position>
+                <position>318,361</position>
+                <position>318,360</position>
+                <position>318,359</position>
+                <position>318,358</position>
+                <position>318,357</position>
+                <position>318,356</position>
+                <position>318,355</position>
+                <position>318,354</position>
+                <position>319,354</position>
+                <position>320,354</position>
+                <position>320,354</position>
+                <position>320,355</position>
+                <position>320,356</position>
+                <position>320,357</position>
+                <position>320,358</position>
+                <position>320,359</position>
+                <position>320,360</position>
+                <position>320,361</position>
+                <position>320,362</position>
+                <position>320,363</position>
+                <position>319,363</position>
+            </psts>
+        </pathing>
+        <skills>
+            <skill name="Quick Attack" type="physical" level="1" usage="3" attack="16" />
+            <skill name="Slash" type="physical" level="2" usage="2" attack="22" />
+            <skill name="Psywave" type="magic" level="1" usage="4" attack="6" />
+        </skills>
+    </fight>
+ </entity>

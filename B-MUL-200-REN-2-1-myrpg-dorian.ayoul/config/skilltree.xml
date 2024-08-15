@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<skills>
+    <skill name="Quick Attack" type="physical" level="1" usage="3" attack="16" />
+    <skill name="Slash" type="physical" level="2" usage="2" attack="22" />
+    <skill name="Psywave" type="magic" level="1" usage="4" attack="6" />
+    <skill name="Psychic" type="magic" level="2" usage="2" attack="12" />
+</skills>

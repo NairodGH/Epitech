@@ -1,0 +1,16 @@
+<settings>
+<vol>75</vol>
+<fps>30</fps>
+<player>6</player>
+<keys>
+<key type="KEY_UP" value="Z" />
+<key type="KEY_DOWN" value="S" />
+<key type="KEY_LEFT" value="Q" />
+<key type="KEY_RIGHT" value="D" />
+<key type="KEY_INV" value="F" />
+<key type="KEY_PLAYER" value="P" />
+<key type="KEY_ACH" value="H" />
+<key type="KEY_QUEST" value="N" />
+<key type="KEY_PICKUP" value="E" />
+</keys>
+</settings>

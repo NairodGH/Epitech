@@ -1,0 +1,16 @@
+name: Build program
+on:
+  push:
+  pull_request:
+
+jobs:
+  fedorabuild:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: make fclean
+        run: make fclean
+      - name: build
+        run: |
+          docker build -t rpg .
+          docker run -i rpg
