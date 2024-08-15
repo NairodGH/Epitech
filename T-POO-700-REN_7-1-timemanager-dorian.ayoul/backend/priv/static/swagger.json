@@ -1,0 +1,780 @@
+{
+  "info": {
+    "version": "1.0",
+    "description": "API Documentation for CGT-U",
+    "title": "CGT-U",
+    "contact": {
+      "name": "The batman",
+      "email": "bruce.wayne@gmail.com"
+    }
+  },
+  "host": "localhost:4000",
+  "definitions": {},
+  "schemes": [
+    "http",
+    "https",
+    "ws",
+    "wss"
+  ],
+  "paths": {
+    "/api/clocks": {
+      "get": {
+        "description": "List of clocks",
+        "operationId": "ApiWeb.ClockController.index",
+        "parameters": [],
+        "responses": {
+          "ok": {
+            "description": "Success"
+          }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ],
+        "summary": "",
+        "tags": [
+          "Clock"
+        ]
+      },
+      "post": {
+        "description": "Create clock",
+        "operationId": "ApiWeb.ClockController.create",
+        "parameters": [
+          {
+            "description": "Clock params",
+            "in": "body",
+            "name": "clock",
+            "required": true,
+            "schema": "Elixir.Api.Clocks.Clock"
+          }
+        ],
+        "responses": {
+          "ok": {
+            "description": "Success"
+          }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ],
+        "summary": "",
+        "tags": [
+          "Clock"
+        ]
+      }
+    },
+    "/api/clocks/:id": {
+      "delete": {
+        "description": "Delete clock",
+        "operationId": "ApiWeb.ClockController.delete",
+        "parameters": [
+          {
+            "description": "Clock id",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string",
+            "x-example": "bd6b8444-6aa8-41ea-94c7-b438f895fb75"
+          }
+        ],
+        "responses": {
+          "ok": {
+            "description": "Success"
+          }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ],
+        "summary": "",
+        "tags": [
+          "Clock"
+        ]
+      },
+      "get": {
+        "description": "Show clock",
+        "operationId": "ApiWeb.ClockController.show",
+        "parameters": [
+          {
+            "description": "Clock id",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string",
+            "x-example": "bd6b8444-6aa8-41ea-94c7-b438f895fb75"
+          }
+        ],
+        "responses": {
+          "ok": {
+            "description": "Success"
+          }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ],
+        "summary": "",
+        "tags": [
+          "Clock"
+        ]
+      },
+      "put": {
+        "description": "Update clock",
+        "operationId": "ApiWeb.ClockController.update",
+        "parameters": [
+          {
+            "description": "Clock id",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string",
+            "x-example": "bd6b8444-6aa8-41ea-94c7-b438f895fb75"
+          },
+          {
+            "description": "Clock params",
+            "in": "body",
+            "name": "clock",
+            "required": true,
+            "schema": "Elixir.Api.Clocks.Clock"
+          }
+        ],
+        "responses": {
+          "ok": {
+            "description": "Success"
+          }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ],
+        "summary": "",
+        "tags": [
+          "Clock"
+        ]
+      }
+    },
+    "/api/clocks/create_with_data": {
+      "post": {
+        "description": "Create clock with data",
+        "operationId": "ApiWeb.ClockController.create_with_data",
+        "parameters": [
+          {
+            "description": "Clock params",
+            "in": "body",
+            "name": "clock",
+            "required": true,
+            "schema": "Elixir.Api.Clocks.Clock"
+          }
+        ],
+        "responses": {
+          "ok": {
+            "description": "Success"
+          }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ],
+        "summary": "",
+        "tags": [
+          "Clock"
+        ]
+      }
+    },
+    "/api/clocks/user/:user_id": {
+      "get": {
+        "description": "Show clocks for a user",
+        "operationId": "ApiWeb.ClockController.show_user_clocks",
+        "parameters": [
+          {
+            "description": "User id",
+            "in": "path",
+            "name": "user_id",
+            "required": true,
+            "type": "string",
+            "x-example": "bd6b8444-6aa8-41ea-94c7-b438f895fb75"
+          }
+        ],
+        "responses": {
+          "ok": {
+            "description": "Success"
+          }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ],
+        "summary": "",
+        "tags": [
+          "Clock"
+        ]
+      }
+    },
+    "/api/teams": {
+      "get": {
+        "description": "List of teams",
+        "operationId": "ApiWeb.TeamController.index",
+        "parameters": [],
+        "responses": {
+          "ok": {
+            "description": "Success"
+          }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ],
+        "summary": "",
+        "tags": [
+          "Team"
+        ]
+      },
+      "post": {
+        "description": "Create team",
+        "operationId": "ApiWeb.TeamController.create",
+        "parameters": [
+          {
+            "description": "Team params",
+            "in": "body",
+            "name": "team",
+            "required": true,
+            "schema": "Elixir.Api.Teams.Team"
+          }
+        ],
+        "responses": {
+          "ok": {
+            "description": "Success"
+          }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ],
+        "summary": "",
+        "tags": [
+          "Team"
+        ]
+      }
+    },
+    "/api/teams/:id": {
+      "delete": {
+        "description": "Delete team",
+        "operationId": "ApiWeb.TeamController.delete",
+        "parameters": [
+          {
+            "description": "Team id",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string",
+            "x-example": "bd6b8444-6aa8-41ea-94c7-b438f895fb75"
+          }
+        ],
+        "responses": {
+          "ok": {
+            "description": "Success"
+          }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ],
+        "summary": "",
+        "tags": [
+          "Team"
+        ]
+      },
+      "get": {
+        "description": "Show team",
+        "operationId": "ApiWeb.TeamController.show",
+        "parameters": [
+          {
+            "description": "Team id",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string",
+            "x-example": "bd6b8444-6aa8-41ea-94c7-b438f895fb75"
+          }
+        ],
+        "responses": {
+          "ok": {
+            "description": "Success"
+          }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ],
+        "summary": "",
+        "tags": [
+          "Team"
+        ]
+      },
+      "put": {
+        "description": "Update team",
+        "operationId": "ApiWeb.TeamController.update",
+        "parameters": [
+          {
+            "description": "Team id",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string",
+            "x-example": "bd6b8444-6aa8-41ea-94c7-b438f895fb75"
+          },
+          {
+            "description": "Team params",
+            "in": "body",
+            "name": "team",
+            "required": true,
+            "schema": "Elixir.Api.Teams.Team"
+          }
+        ],
+        "responses": {
+          "ok": {
+            "description": "Success"
+          }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ],
+        "summary": "",
+        "tags": [
+          "Team"
+        ]
+      }
+    },
+    "/api/teams/:id/users": {
+      "get": {
+        "description": "Show users in the team",
+        "operationId": "ApiWeb.TeamController.show_users",
+        "parameters": [
+          {
+            "description": "Team id",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string",
+            "x-example": "bd6b8444-6aa8-41ea-94c7-b438f895fb75"
+          }
+        ],
+        "responses": {
+          "ok": {
+            "description": "Success"
+          }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ],
+        "summary": "",
+        "tags": [
+          "Team"
+        ]
+      }
+    },
+    "/api/users": {
+      "get": {
+        "description": "List of users",
+        "operationId": "ApiWeb.UserController.index",
+        "parameters": [],
+        "responses": {
+          "ok": {
+            "description": "Success"
+          }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ],
+        "summary": "",
+        "tags": [
+          "User"
+        ]
+      },
+      "post": {
+        "description": "Create user",
+        "operationId": "ApiWeb.UserController.create",
+        "parameters": [
+          {
+            "description": "User params",
+            "in": "body",
+            "name": "user",
+            "required": true,
+            "schema": "Elixir.Api.Users.User"
+          }
+        ],
+        "responses": {
+          "ok": {
+            "description": "Success"
+          }
+        },
+        "summary": "",
+        "tags": [
+          "User"
+        ]
+      }
+    },
+    "/api/users/:id": {
+      "delete": {
+        "description": "Delete user",
+        "operationId": "ApiWeb.UserController.delete",
+        "parameters": [
+          {
+            "description": "User id",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string",
+            "x-example": "bd6b8444-6aa8-41ea-94c7-b438f895fb75"
+          }
+        ],
+        "responses": {
+          "ok": {
+            "description": "Success"
+          }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ],
+        "summary": "",
+        "tags": [
+          "User"
+        ]
+      },
+      "get": {
+        "description": "Show user",
+        "operationId": "ApiWeb.UserController.show",
+        "parameters": [
+          {
+            "description": "User id",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string",
+            "x-example": "bd6b8444-6aa8-41ea-94c7-b438f895fb75"
+          }
+        ],
+        "responses": {
+          "ok": {
+            "description": "Success"
+          }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ],
+        "summary": "",
+        "tags": [
+          "User"
+        ]
+      },
+      "put": {
+        "description": "Update user",
+        "operationId": "ApiWeb.UserController.update",
+        "parameters": [
+          {
+            "description": "User id",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string",
+            "x-example": "bd6b8444-6aa8-41ea-94c7-b438f895fb75"
+          },
+          {
+            "description": "User params",
+            "in": "body",
+            "name": "user",
+            "required": true,
+            "schema": "Elixir.Api.Users.User"
+          }
+        ],
+        "responses": {
+          "ok": {
+            "description": "Success"
+          }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ],
+        "summary": "",
+        "tags": [
+          "User"
+        ]
+      }
+    },
+    "/api/users/:id/team": {
+      "put": {
+        "description": "Update user team",
+        "operationId": "ApiWeb.UserController.update_team",
+        "parameters": [
+          {
+            "description": "User id",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string",
+            "x-example": "bd6b8444-6aa8-41ea-94c7-b438f895fb75"
+          },
+          {
+            "description": "Team id",
+            "in": "body",
+            "name": "team_id",
+            "required": false,
+            "schema": "string",
+            "x-example": "3e9f92b0-4985-46ec-bb64-95eb82699790"
+          }
+        ],
+        "responses": {},
+        "security": [
+          {
+            "Bearer": []
+          }
+        ],
+        "summary": "",
+        "tags": [
+          "User"
+        ]
+      }
+    },
+    "/api/users/login": {
+      "post": {
+        "description": "Login user",
+        "operationId": "ApiWeb.UserController.login",
+        "parameters": [
+          {
+            "description": "User params",
+            "in": "body",
+            "name": "user",
+            "required": true,
+            "schema": "Elixir.Api.Users.User"
+          }
+        ],
+        "responses": {
+          "ok": {
+            "description": "Success"
+          }
+        },
+        "summary": "",
+        "tags": [
+          "User"
+        ]
+      }
+    },
+    "/api/users:params": {
+      "get": {
+        "description": "Find users by params (max: 1)",
+        "operationId": "ApiWeb.UserController.find",
+        "parameters": [
+          {
+            "description": "Team id",
+            "in": "query",
+            "name": "team_id",
+            "required": false,
+            "type": "string",
+            "x-example": "bd6b8444-6aa8-41ea-94c7-b438f895fb75"
+          },
+          {
+            "description": "Role",
+            "in": "query",
+            "name": "role",
+            "required": false,
+            "type": "string",
+            "x-example": "Manager"
+          }
+        ],
+        "responses": {
+          "ok": {
+            "description": "Success"
+          }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ],
+        "summary": "",
+        "tags": [
+          "User"
+        ]
+      }
+    },
+    "/api/working_times": {
+      "get": {
+        "description": "List of working times",
+        "operationId": "ApiWeb.WorkingTimeController.index",
+        "parameters": [],
+        "responses": {
+          "ok": {
+            "description": "Success"
+          }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ],
+        "summary": "",
+        "tags": [
+          "WorkingTime"
+        ]
+      },
+      "post": {
+        "description": "Create working time",
+        "operationId": "ApiWeb.WorkingTimeController.create",
+        "parameters": [
+          {
+            "description": "Working time params",
+            "in": "body",
+            "name": "working_time",
+            "required": true,
+            "schema": "Elixir.Api.WorkingTimes.WorkingTime"
+          }
+        ],
+        "responses": {
+          "ok": {
+            "description": "Success"
+          }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ],
+        "summary": "",
+        "tags": [
+          "WorkingTime"
+        ]
+      }
+    },
+    "/api/working_times/:id": {
+      "delete": {
+        "description": "Delete working time",
+        "operationId": "ApiWeb.WorkingTimeController.delete",
+        "parameters": [
+          {
+            "description": "Working time id",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string",
+            "x-example": "bd6b8444-6aa8-41ea-94c7-b438f895fb75"
+          }
+        ],
+        "responses": {
+          "ok": {
+            "description": "Success"
+          }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ],
+        "summary": "",
+        "tags": [
+          "WorkingTime"
+        ]
+      },
+      "get": {
+        "description": "Show working time",
+        "operationId": "ApiWeb.WorkingTimeController.show",
+        "parameters": [
+          {
+            "description": "Working time id",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string",
+            "x-example": "bd6b8444-6aa8-41ea-94c7-b438f895fb75"
+          }
+        ],
+        "responses": {
+          "ok": {
+            "description": "Success"
+          }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ],
+        "summary": "",
+        "tags": [
+          "WorkingTime"
+        ]
+      },
+      "put": {
+        "description": "Update working time",
+        "operationId": "ApiWeb.WorkingTimeController.update",
+        "parameters": [
+          {
+            "description": "Working time id",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string",
+            "x-example": "bd6b8444-6aa8-41ea-94c7-b438f895fb75"
+          },
+          {
+            "description": "Working time params",
+            "in": "body",
+            "name": "working_time",
+            "required": true,
+            "schema": "Elixir.Api.WorkingTimes.WorkingTime"
+          }
+        ],
+        "responses": {
+          "ok": {
+            "description": "Success"
+          }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ],
+        "summary": "",
+        "tags": [
+          "WorkingTime"
+        ]
+      }
+    }
+  },
+  "swagger": "2.0",
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "securityDefinitions": {
+    "Bearer": {
+      "in": "header",
+      "name": "Authorization",
+      "type": "apiKey",
+      "description": "API Token must be provided via `Authorization: Bearer ` header"
+    }
+  }
+}

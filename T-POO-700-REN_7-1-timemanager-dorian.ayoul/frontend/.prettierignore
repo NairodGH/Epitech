@@ -1,0 +1,30 @@
+# Ignore build and output directories
+node_modules/
+.next/
+out/
+build/
+dist/
+# public/
+coverage/
+storybook-static/
+
+# Ignore certain file types
+*.jpg
+*.jpeg
+*.gif
+*.png
+*.svg
+*.ico
+*.webp
+*.pdf
+
+# Ignore configuration files
+.eslintrc*
+# *.config.js
+# *.json
+.prettierignore
+.editorconfig
+.env*
+*.yml
+*.yaml
+*.md
