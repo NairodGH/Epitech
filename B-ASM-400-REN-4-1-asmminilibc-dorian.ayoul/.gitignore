@@ -1,0 +1,6 @@
+.vscode/
+a.out
+main.c
+*.o
+unit_tests
+libasm.so
