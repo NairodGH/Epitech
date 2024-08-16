@@ -28,7 +28,8 @@
 
 ## 🔍 About
 
-Can also be found at https://github.com/NairodGH/Homuresu.
+Can also be found at https://github.com/NairodGH/Homuresu
+
 [Homuresu](https://en.wikipedia.org/wiki/Homelessness) is a 3rd year game JAM Epitech project where a group of 3-6 (but we're 8 lol) students have to code a 3D FPS about superheroes/supervillains shooting each other.\
 
 ## 💻 Requirements

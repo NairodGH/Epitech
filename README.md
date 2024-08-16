@@ -25,6 +25,8 @@ Folder names were cloned as-is with (respectively separated by hyphens):
 - The name of the project/pool day
 - The name of the student
 
+Most of the projects were coded in C and C++, the fake 50% HTML is from generated documentation.
+
 ## 🤝 Authors
 
 [Dorian AYOUL](https://github.com/NairodGH)\

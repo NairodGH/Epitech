@@ -18,7 +18,8 @@
 
 ## 🔍 About
 
-Can also be found at https://github.com/NairodGH/Chaos.\
+Can also be found at https://github.com/NairodGH/Chaos
+
 Chaos is a personal C windows project I've started back in 2022 summer vacations for school.\
 It is a [Yuzu](https://en.wikipedia.org/wiki/Yuzu_(emulator)) [Super Smash Bros. Ultimate](https://en.wikipedia.org/wiki/Super_Smash_Bros._Ultimate) cheat application that allows you to increase/decrease the damage taken/shield regeneration of fighters.\
 The goal was to learn more about [reverse engineering](https://en.wikipedia.org/wiki/Reverse_engineering) and [Win32](https://en.wikipedia.org/wiki/Windows_API) while working with a game I like.\

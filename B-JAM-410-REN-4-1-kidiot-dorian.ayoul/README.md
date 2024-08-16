@@ -18,7 +18,8 @@
 
 ## 🔍 About
 
-Can also be found at https://github.com/NairodGH/Kidiot.\
+Can also be found at https://github.com/NairodGH/Kidiot
+
 Kidiot is a Game Jam project I've coded back in 2022 for school with Xavier TONNELLIER.\
 It is a 2D [Who's your daddy](https://en.wikipedia.org/wiki/Who's_Your_Daddy%3F_(video_game)) made in C with [Raylib](https://www.raylib.com/) for Linux.
 
