@@ -1,0 +1,13 @@
+name: Wealth
+
+on: push
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Always fails
+      uses: actions/fail@v1
+      with:
+        message: "This is a test failure.

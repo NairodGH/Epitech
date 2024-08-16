@@ -53,6 +53,6 @@ If the player doesn't
 
 ## Contributors
 - aurelien.marcel@epitech.eu
-- dorian.ayoul@epitech.eu
+- dorian.ayoul@epitech.eu (hard carried)
 - pierre.hamel@epitech.eu
 - mathis.chretien@epitech.eu

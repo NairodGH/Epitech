@@ -1,0 +1,1 @@
+Rename the files accordingly in sounds/ (or pick other characters and change the code accordingly but good luck haha).

@@ -1,0 +1,1 @@
+Executable files and symbolic links aren't actually.
