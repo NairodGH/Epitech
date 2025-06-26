@@ -1,0 +1,93 @@
+/** @type {import('tailwindcss').Config} */
+import withMT from "@material-tailwind/react/utils/withMT";
+
+module.exports = withMT({
+  content: [
+    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+  ],
+  theme: {
+    extend: {
+      backgroundImage: {
+        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
+        "gradient-conic":
+          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+      },
+
+      colors: {
+        charcoal: {
+          DEFAULT: "#424B54",
+          50: "#9CA7B1",
+          100: "#919DA8",
+          200: "#7A8896",
+          300: "#667482",
+          400: "#545F6B",
+          500: "#424B54",
+          600: "#292F35",
+          700: "#111315",
+          800: "#000000",
+          900: "#000000",
+          950: "#000000",
+        },
+        "rosy-brown": {
+          DEFAULT: "#B38D97",
+          50: "#FCFBFB",
+          100: "#F4EFF0",
+          200: "#E4D6DA",
+          300: "#D4BEC4",
+          400: "#C3A5AD",
+          500: "#B38D97",
+          600: "#9D6B78",
+          700: "#7D535E",
+          800: "#5B3D45",
+          900: "#39262B",
+          950: "#291B1F",
+        },
+        "tea-rose": {
+          DEFAULT: "#D5ACA9",
+          50: "#FFFFFF",
+          100: "#FFFFFF",
+          200: "#FDFBFB",
+          300: "#F0E1E0",
+          400: "#E2C6C4",
+          500: "#D5ACA9",
+          600: "#C38883",
+          700: "#B0635E",
+          800: "#904B46",
+          900: "#6A3734",
+          950: "#572E2B",
+        },
+        "desert-sand": {
+          DEFAULT: "#EBCFB2",
+          50: "#FFFFFF",
+          100: "#FFFFFF",
+          200: "#FFFFFF",
+          300: "#FCF7F3",
+          400: "#F3E3D2",
+          500: "#EBCFB2",
+          600: "#DFB385",
+          700: "#D49759",
+          800: "#C27C32",
+          900: "#965F27",
+          950: "#7F5121",
+        },
+        silver: {
+          DEFAULT: "#C5BAAF",
+          50: "#FFFFFF",
+          100: "#FFFFFF",
+          200: "#F8F7F6",
+          300: "#E7E3DE",
+          400: "#D6CEC7",
+          500: "#C5BAAF",
+          600: "#AD9E8E",
+          700: "#96826E",
+          800: "#766656",
+          900: "#564A3E",
+          950: "#453C32",
+        },
+      },
+    },
+  },
+  plugins: [],
+});

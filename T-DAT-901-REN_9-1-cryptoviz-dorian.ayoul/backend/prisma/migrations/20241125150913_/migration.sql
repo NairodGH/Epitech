@@ -1,0 +1,2 @@
+-- AlterTable
+ALTER TABLE "CryptoValue" ADD COLUMN     "variation" DOUBLE PRECISION NOT NULL DEFAULT 0;

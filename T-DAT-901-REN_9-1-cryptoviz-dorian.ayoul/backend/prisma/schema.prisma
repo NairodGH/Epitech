@@ -1,0 +1,70 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+  previewFeatures = ["fullTextSearch", "fullTextIndex"]
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum Period {
+  MINUTE
+  HOUR
+  DAY
+}
+
+model Crypto {
+  id           String        @id @default(uuid())
+  coinmarketId Int           @unique
+  name         String
+  symbol       String        @default("")
+  description  String?
+  imageUrl     String?
+  price        CryptoValue[]
+  history      CryptoDay[]
+}
+
+model CryptoValue {
+  id              String   @id @default(uuid())
+  unitDollarPrice Float
+  period          Period
+  createdAt       DateTime @default(now())
+  crypto          Crypto   @relation(fields: [cryptoId], references: [id])
+  cryptoId        String
+}
+
+model CryptoDay {
+  id              String   @id @default(uuid())
+  openingPrice    Float
+  closingPrice    Float
+  highPrice       Float
+  lowPrice        Float
+  date            DateTime
+  createdAt       DateTime @default(now())
+  crypto          Crypto   @relation(fields: [cryptoId], references: [id])
+  cryptoId        String
+}
+
+model RSSFeed {
+  id          String        @id @default(uuid())
+  name        String        @default("")
+  link        String        @unique
+  createdAt   DateTime      @default(now())
+  updatedAt   DateTime      @updatedAt
+  RSSFeedItem RSSFeedItem[]
+}
+
+model RSSFeedItem {
+  id        String   @id @default(uuid())
+  title     String
+  content   String
+  imageUrl  String?
+  pubDate   DateTime
+  createdAt DateTime @default(now())
+  feed      RSSFeed  @relation(fields: [feedId], references: [id])
+  feedId    String
+}

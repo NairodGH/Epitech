@@ -1,0 +1,2 @@
+-- AlterTable
+ALTER TABLE "RSSFeed" ADD COLUMN     "name" TEXT NOT NULL DEFAULT '';
