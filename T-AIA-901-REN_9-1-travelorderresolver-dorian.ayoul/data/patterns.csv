@@ -1,0 +1,305 @@
+pattern	sentence_type
+je veux partir de $ pour $	from_to
+j'aimerais me rendre à $ en quittant $	to_from
+Je quitte $ pour $	from_to
+Quel est le chemin le plus court de $ vers $ ?	from_to
+Quel est le trajet optimal pour aller à $ depuis $ ?	to_from
+itinéraire de voyage de $ vers $	from_to
+Comment puis-je atteindre $ en partant de $ ?	to_from
+Quel est l'itinéraire entre $ et $	from_to
+Pouvez-vous me guider de $ jusqu'à $	to_from
+Quel trajet pour $ $	from_to
+J'aimerais me rendre sur $ en partant de $	to_from
+je viens de $ et je veux aller à $	from_to
+Je souhaite me rendre à $ à partir de $	to_from
+Quelle est la route à suivre de $ à $ ?	from_to
+Quel est le meilleur itinéraire pour rejoindre $ depuis $ ?	to_from
+trajet $ $	from_to
+Pouvez-vous m'indiquer comment aller à $ en partant de $ ?	to_from
+itinéraire $ $	from_to
+Je cherche un itinéraire pour aller à $ depuis $	to_from
+le départ et l'arrivée de mon voyage sont respectivement $ et $	from_to
+Je cherche à atteindre $ en commençant mon voyage à $	to_from
+Ma provenance et ma destination sont respectivement $ et $	from_to
+Quel est le chemin recommandé pour aller vers $ depuis $ ?	to_from
+j'aimerais partir de $ pour me rendre à $	from_to
+Comment puis-je me rendre à $ si je pars de $ ?	to_from
+Je suis à $ et je souhaite me rendre à $	from_to
+Je voudrais savoir comment rejoindre $ en débutant à $	to_from
+Comment puis-je me déplacer de $ à $ ?	from_to
+Quel est l'itinéraire suggéré pour aller à $ à partir de $ ?	to_from
+Je souhaite le chemin le plus rapide entre les deux gares suivantes; gare de $ et gare de $	from_to
+Pouvez-vous me guider vers $ en partant de $ ?	to_from
+nous voulons aller du pont du $ jusqu'à $	from_to
+Je cherche à me rendre à $ en démarrant de $	to_from
+ils veulent aller de $ jusqu'à $	from_to
+Quel est le trajet conseillé pour atteindre $ depuis $ ?	to_from
+Je veux le trajet de $ à $	from_to
+Comment puis-je voyager jusqu'à $ en commençant par $ ?	to_from
+Je veux aller de $ à $	from_to
+Je souhaite planifier un voyage vers $ en partant de $	to_from
+Depuis $ à $	from_to
+Quel est le parcours idéal pour aller à $ depuis $ ?	to_from
+Emmène moi de $ à $	from_to
+Pouvez-vous m'aider à trouver le chemin vers $ en partant de $ ?	to_from
+de $ à $	from_to
+Je cherche à me déplacer vers $ en débutant mon trajet à $	to_from
+Je suis à $ et je veux aller à $	from_to
+Quel est l'itinéraire le plus pratique pour aller à $ depuis $ ?	to_from
+Quel est le trajet optimal entre $ et $ ?	from_to
+Comment puis-je me diriger vers $ en commençant à $ ?	to_from
+Je cherche à me rendre de $ vers $	from_to
+Je voudrais connaître le meilleur moyen d'atteindre $ à partir de $	to_from
+Pouvez-vous m'aider à planifier un voyage de $ à $ ?	from_to
+Quel est le trajet le plus approprié pour rejoindre $ depuis $ ?	to_from
+Je dois voyager de $ jusqu'à $	from_to
+Pouvez-vous m'indiquer comment me rendre à $ en démarrant de $ ?	to_from
+Comment puis-je aller de $ à $ ?	from_to
+Je cherche à planifier mon voyage vers $ en partant de $	to_from
+Quel est le parcours de $ à $ ?	from_to
+Quel est le parcours recommandé pour aller jusqu'à $ depuis $ ?	to_from
+Je cherche à me déplacer de $ en direction de $	from_to
+Comment puis-je me rendre à destination $ en partant de $ ?	to_from
+Indiquez-moi le chemin pour aller de $ à $	from_to
+Je souhaite savoir comment atteindre $ si je commence mon trajet à $	to_from
+Je souhaite me rendre de $ jusqu'à $	from_to
+Quel est l'itinéraire optimal pour rejoindre $ en partant de $ ?	to_from
+Quel est l'itinéraire le plus direct de $ à $ ?	from_to
+arrivée $ et départ $	to_from
+Je dois faire le trajet de $ à $	from_to
+L'arrivée et le départ de mon voyage sont respectivement $ et $	to_from
+Comment puis-je me rendre de $ à $ ?	from_to
+Ma destination et ma provenance sont respectivement $ et $	to_from
+Quel est le meilleur itinéraire pour aller de $ à $ ?	from_to
+Je me rends à $ en partant de $	to_from
+Je voudrais connaître le chemin entre $ et $	from_to
+Quel est le meilleur chemin pour atteindre $ en partant de $	to_from
+Pouvez-vous me dire comment aller de $ à $ ?	from_to
+J'irai bien à la gare de $ depuis la gare de $	to_from
+Je cherche à rejoindre $ depuis $	from_to
+Indiquez-moi comment me rendre à $ en commençant par $	to_from
+Quel est le trajet recommandé de $ vers $ ?	from_to
+Je dois me déplacer vers $ en démarrant de $	to_from
+Je dois faire le voyage de $ à $	from_to
+Je veux me rendre à $ en partant de $	to_from
+Comment puis-je me rendre de $ jusqu'à $ ?	from_to
+Comment aller à $ depuis $	to_from
+Quel est le meilleur moyen d'aller de $ à $ ?	from_to
+Pourriez-vous m'indiquer le trajet de $ à $	to_from
+Je cherche à planifier un trajet de $ vers $	from_to
+Allons à $ depuis $	to_from
+Pouvez-vous m'indiquer le chemin de $ à $ ?	from_to
+Itinéraire jusqu'à $ depuis $	to_from
+Je souhaite connaître l'itinéraire entre $ et $	from_to
+itinéraire jusqu'a $ en partant de $	to_from
+Quel est le parcours conseillé de $ à $ ?	from_to
+Je souhaite voyager vers $ en commençant mon trajet à $	to_from
+Je dois effectuer le trajet de $ jusqu'à $	from_to
+Je veux trouver un trajet de $ à $	from_to
+Je voudrais savoir comment aller de $ à $	from_to
+Quel est l'itinéraire recommandé pour aller à $ à partir de $	to_from
+Comment me rendre à $ depuis $	to_from
+Je prévois un déplacement de $ à $	from_to
+Quelle est la meilleure façon d'arriver à $ en partant de $ ?	to_from
+Quel est le chemin à emprunter pour aller de $ à $ ?	from_to
+Comment puis-je me rendre à $ si je commence mon voyage à $ ?	to_from
+Je souhaite connaître l'itinéraire entre $ et $ pour mon voyage	from_to
+Pouvez-vous m'aider à trouver un itinéraire de $ vers $ ?	to_from
+Quel est le trajet le plus efficace de $ à $ ?	from_to
+Je cherche le meilleur moyen de rejoindre $ en partant de $	to_from
+Je dois me rendre de $ vers $ pour mon prochain déplacement	from_to
+Quel est le parcours suggéré pour atteindre $ depuis $ ?	to_from
+Pouvez-vous m'indiquer comment voyager de $ à $ ?	from_to
+Je voudrais connaître les options pour aller à $ en partant de $	to_from
+Quel est l'itinéraire recommandé pour se rendre de $ à $ ?	from_to
+Comment puis-je planifier mon trajet de $ vers $ ?	to_from
+Je cherche à me déplacer entre $ et $	from_to
+Pouvez-vous me guider pour aller à $ en commençant par $ ?	to_from
+Quel est le meilleur moyen de se rendre de $ à $ ?	from_to
+Je souhaite organiser mon voyage de $ à $	to_from
+Comment puis-je me rendre de $ jusqu'à $ de la manière la plus efficace ?	from_to
+Quel est l'itinéraire le plus rapide pour atteindre $ depuis $ ?	to_from
+Je dois planifier un trajet allant de $ à $	from_to
+Pouvez-vous m'aider à trouver le chemin le plus court vers $ en partant de $ ?	to_from
+Quel est le parcours recommandé pour aller de $ à $ ?	from_to
+Je cherche à optimiser mon trajet de $ vers $	to_from
+Comment puis-je me rendre de $ à $ de la façon la plus directe ?	from_to
+Quel est le meilleur itinéraire pour voyager vers $ en partant de $ ?	to_from
+Je souhaite connaître les options de trajet entre $ et $	from_to
+Pouvez-vous me conseiller sur la meilleure façon d'atteindre $ depuis $ ?	to_from
+Quel est le chemin le plus pratique pour aller de $ à $ ?	from_to
+Je cherche à planifier mon itinéraire de $ à $	to_from
+Comment puis-je organiser mon déplacement de $ vers $ ?	from_to
+Quel est le trajet le plus simple pour me rendre à $ en partant de $ ?	to_from
+Je voudrais connaître les différentes possibilités pour aller de $ à $	from_to
+Pouvez-vous m'indiquer le meilleur chemin pour atteindre $ depuis $ ?	to_from
+Quel est l'itinéraire le plus efficace pour se rendre de $ à $ ?	from_to
+Je cherche à optimiser mon voyage de $ vers $	to_from
+Comment puis-je me déplacer de $ à $ de la manière la plus pratique ?	from_to
+Quel est le parcours conseillé pour aller à $ en partant de $ ?	to_from
+Je souhaite trouver le meilleur itinéraire entre $ et $	from_to
+Pouvez-vous me guider sur la façon la plus rapide d'atteindre $ depuis $ ?	to_from
+Quel est le trajet le plus direct pour aller de $ à $ ?	from_to
+Je cherche à planifier mon déplacement vers $ en partant de $	to_from
+Comment puis-je organiser mon voyage de $ à $ ?	from_to
+Quel est l'itinéraire recommandé pour se rendre à $ en quittant $ ?	to_from
+Je voudrais connaître les meilleures options pour aller de $ à $	from_to
+Pouvez-vous m'aider à trouver le chemin le plus efficace vers $ en partant de $ ?	to_from
+Quel est le parcours suggéré pour se rendre de $ à $ ?	from_to
+Je cherche à optimiser mon trajet entre $ et $	to_from
+Comment puis-je me déplacer de $ vers $ de la façon la plus efficiente ?	from_to
+Quel est le meilleur itinéraire pour atteindre $ en partant de $ ?	to_from
+Je souhaite planifier mon voyage entre $ et $	from_to
+Pouvez-vous me conseiller sur la meilleure route pour aller à $ depuis $ ?	to_from
+Quel est le chemin le plus approprié pour se rendre de $ à $ ?	from_to
+Je cherche à organiser mon déplacement de $ vers $	to_from
+Comment puis-je voyager de $ à $ de la manière la plus commode ?	from_to
+Quel est le trajet recommandé pour atteindre $ en partant de $ ?	to_from
+Je voudrais connaître les différentes routes possibles entre $ et $	from_to
+Pouvez-vous m'indiquer l'itinéraire le plus pratique pour aller à $ depuis $ ?	to_from
+Quel est le parcours le plus rapide pour se rendre de $ à $ ?	from_to
+Je cherche à planifier mon trajet de $ vers $ de façon optimale	to_from
+Comment puis-je me rendre de $ à $ le plus efficacement possible ?	from_to
+Quel est l'itinéraire le plus adapté pour aller à $ en partant de $ ?	to_from
+Je souhaite trouver le meilleur chemin entre $ et $	from_to
+Pouvez-vous me guider sur la façon la plus simple d'atteindre $ depuis $ ?	to_from
+Quel est le trajet le plus logique pour aller de $ à $ ?	from_to
+Je cherche à optimiser mon déplacement vers $ en partant de $	to_from
+Comment puis-je organiser mon voyage entre $ et $ ?	from_to
+Quel est le parcours recommandé pour se rendre à $ en quittant $ ?	to_from
+Je voudrais connaître les meilleures options de trajet de $ à $	from_to
+Pouvez-vous m'aider à trouver l'itinéraire le plus efficace vers $ en partant de $ ?	to_from
+Quel est le chemin suggéré pour se rendre de $ à $ ?	from_to
+Je cherche à planifier mon trajet entre $ et $ de manière optimale	to_from
+Comment puis-je me déplacer de $ vers $ de la façon la plus avantageuse ?	from_to
+Quel est le meilleur parcours pour atteindre $ en partant de $ ?	to_from
+Je souhaite organiser mon déplacement entre $ et $	from_to
+Pouvez-vous me conseiller sur la route la plus directe pour aller à $ depuis $ ?	to_from
+Quel est l'itinéraire le plus approprié pour se rendre de $ à $ ?	from_to
+Je cherche à optimiser mon voyage de $ vers $ pour gagner du temps	to_from
+Comment puis-je aller de $ à $ de la manière la plus efficace ?	from_to
+Quel est le trajet conseillé pour rejoindre $ en partant de $ ?	to_from
+Je voudrais connaître les différentes possibilités de trajet entre $ et $	from_to
+Pouvez-vous m'indiquer le chemin le plus pratique pour aller à $ depuis $ ?	to_from
+Quel est l'itinéraire le plus rapide pour se rendre de $ à $ ?	from_to
+Je cherche à planifier mon voyage de $ vers $ de façon optimale	to_from
+Comment puis-je me rendre de $ à $ en minimisant les changements ?	from_to
+Quel est le parcours le plus adapté pour aller à $ en partant de $ ?	to_from
+Je souhaite trouver la meilleure route entre $ et $	from_to
+Pouvez-vous me guider sur la façon la plus économique d'atteindre $ depuis $ ?	to_from
+Quel est le trajet le plus pratique pour aller de $ à $ ?	from_to
+Je cherche à optimiser mon temps de trajet entre $ et $	to_from
+Comment puis-je organiser mon déplacement de $ vers $ efficacement ?	from_to
+Quel est l'itinéraire recommandé pour se rendre à $ en partant de $ ?	to_from
+Je voudrais connaître les options de transport de $ à $	from_to
+Pouvez-vous m'aider à trouver le chemin le plus scenic entre $ et $ ?	to_from
+Quel est le parcours conseillé pour aller de $ à $ en transport en commun ?	from_to
+Je cherche à planifier mon voyage de $ vers $ avec le moins de correspondances possible	to_from
+Comment puis-je me déplacer de $ à $ en évitant les embouteillages ?	from_to
+Quel est le meilleur itinéraire pour atteindre $ en partant de $ en train ?	to_from
+Je souhaite organiser mon trajet entre $ et $ de la manière la plus confortable	from_to
+Pouvez-vous me conseiller sur la meilleure façon de voyager de $ à $ ?	to_from
+Quel est le chemin le plus sûr pour se rendre de $ à $ ?	from_to
+Je cherche à optimiser mon déplacement de $ vers $ en termes de coût	to_from
+Comment puis-je aller de $ à $ en profitant du paysage ?	from_to
+Quel est le trajet recommandé pour atteindre $ en partant de $ en train ?	to_from
+Je voudrais connaître les différentes options de trajet entre $ et $ en train	from_to
+Pouvez-vous m'indiquer l'itinéraire le plus écologique pour aller à $ depuis $ ?	to_from
+Quel est le parcours le plus intéressant pour se rendre de $ à $ ?	from_to
+Je cherche à planifier mon voyage de $ vers $ en privilégiant les transports en commun	to_from
+Comment puis-je me rendre de $ à $ en évitant les péages ?	from_to
+Quel est l'itinéraire le plus adapté pour aller à $ en partant de $ à pied ?	to_from
+Je souhaite trouver le meilleur compromis temps/prix pour aller de $ à $	from_to
+Pouvez-vous me guider sur la façon la plus rapide d'atteindre $ depuis $ en train ?	to_from
+Quel est le trajet le plus pittoresque pour aller de $ à $ ?	from_to
+Je cherche à optimiser mon déplacement vers $ en partant de $ en termes d'empreinte carbone	to_from
+Comment puis-je organiser mon voyage entre $ et $ en passant par des points d'intérêt ?	from_to
+Quel est le parcours recommandé pour se rendre à $ en quittant $ en covoiturage ?	to_from
+Je voudrais connaître les meilleures options de trajet de $ à $ pour une personne à mobilité réduite	from_to
+Pouvez-vous m'aider à trouver l'itinéraire le plus adapté aux familles pour aller de $ à $ ?	to_from
+Quel est le chemin suggéré pour se rendre de $ à $ en évitant les zones à forte circulation ?	from_to
+Je cherche à planifier mon trajet entre $ et $ en privilégiant les modes de transport doux	to_from
+Comment puis-je me déplacer de $ vers $ en faisant des pauses régulières ?	from_to
+Quel est le meilleur parcours pour atteindre $ en partant de $ en moto ?	to_from
+Je souhaite organiser mon déplacement entre $ et $ en maximisant les correspondances avec les transports en commun	from_to
+Pouvez-vous me conseiller sur la route la plus pittoresque pour aller à $ depuis $ ?	to_from
+Quel est l'itinéraire le plus approprié pour se rendre de $ à $ avec des enfants ?	from_to
+Je cherche à optimiser mon voyage de $ vers $ en termes de confort et de rapidité	to_from
+Comment puis-je aller de $ à $ en passant par des lieux historiques ?	from_to
+Quel est le trajet conseillé pour rejoindre $ en partant de $ en transport fluvial ?	to_from
+Je voudrais connaître les différentes possibilités de trajet entre $ et $ accessibles aux personnes âgées	from_to
+Pouvez-vous m'indiquer le chemin le plus adapté pour aller à $ depuis $ avec des bagages volumineux ?	to_from
+Quel est l'itinéraire le plus rapide pour se rendre de $ à $ en évitant les travaux routiers ?	from_to
+Je cherche à planifier mon voyage de $ vers $ en privilégiant les paysages naturels	to_from
+Comment puis-je me rendre de $ à $ en faisant des escales intéressantes ?	from_to
+Quel est le parcours le plus adapté pour aller à $ en partant de $ en camping-car ?	to_from
+je voudrais aller de $ à $	from_to
+Comment me rendre à $ depuis la gare de $ ?	to_from
+Je veux aller voir mon ami Albert à $ en partant de $	to_from
+Il y a-t-il des trains de $ à $	from_to
+Je souhaite partir de $ pour rejoindre $	from_to
+Quel est le meilleur moyen de voyager de $ à $ ?	from_to
+J'aimerais savoir comment aller à $ depuis $	to_from
+Quel est le chemin à suivre pour aller de $ à $ ?	from_to
+Je veux me rendre à $ en partant de $	to_from
+Comment puis-je atteindre $ en partant de $ ?	to_from
+Je cherche un itinéraire de $ à $	from_to
+Quel est le trajet à prendre pour aller de $ à $ ?	from_to
+Je veux savoir comment me rendre à $ depuis $	to_from
+Quel est le meilleur itinéraire pour aller de $ à $ ?	from_to
+Je souhaite connaître le chemin pour aller à $ depuis $	to_from
+Comment puis-je voyager de $ à $ ?	from_to
+Je veux aller de $ à $ en utilisant les transports en commun	from_to
+Quel est le trajet le plus rapide pour aller de $ à $ ?	from_to
+Je cherche à me rendre à $ en partant de $	to_from
+Quel est le meilleur chemin pour aller de $ à $ ?	from_to
+Je voudrais savoir comment rejoindre $ en partant de $	to_from
+Quel est l'itinéraire à suivre pour aller de $ à $ ?	from_to
+Je veux planifier un voyage de $ à $	from_to
+Comment puis-je me rendre à $ en partant de $ ?	to_from
+Je veux aller de $ à $ en partant de $	from_to
+Quel est le meilleur chemin pour aller de $ à $ ?	from_to
+Je souhaite partir de $ pour aller à $ en toute tranquillité	from_to
+Comment puis-je atteindre $ en passant par $ ?	to_from
+Je cherche un itinéraire direct de $ à $ ?	from_to
+Quel est le chemin le plus simple pour aller de $ à $ ?	from_to
+Je veux savoir quel est le trajet de $ à $ sans détour ?	from_to
+Quel est l'itinéraire le plus court pour aller de $ à $ ?	from_to
+Je voudrais connaître le chemin le plus rapide pour aller de $ à $ ?	from_to
+Comment puis-je me rendre à $ en passant par $ ?	to_from
+Je veux aller de $ à $ sans escale ?	from_to
+Quel est le meilleur itinéraire pour aller de $ à $ sans changement ?	from_to
+Je cherche à me rendre de $ à $ en toute sécurité ?	from_to
+Quel est le trajet le plus direct de $ à $ ?	from_to
+Je souhaite connaître le chemin le plus rapide pour aller de $ à $ ?	from_to
+Comment puis-je atteindre $ en partant de $ sans problème ?	to_from
+Je veux savoir quel est le meilleur chemin pour aller de $ à $ ?	from_to
+Quel est le parcours le plus simple pour aller de $ à $ ?	from_to
+Je cherche un itinéraire de $ à $ sans complications ?	from_to
+Comment puis-je me rendre à $ en partant de $ facilement ?	to_from
+Je veux aller de $ à $ en toute simplicité ?	from_to
+Quel est le meilleur moyen d'aller de $ à $ ?	from_to
+Je souhaite partir de $ pour rejoindre $ sans stress ?	from_to
+Comment puis-je atteindre $ en partant de $ rapidement ?	to_from
+Je veux savoir quel est le trajet le plus efficace de $ à $ ?	from_to
+Quel est le chemin recommandé pour aller de $ à $ ?	from_to
+Je cherche à me rendre à $ en partant de $ sans tracas ?	to_from
+Quel est le meilleur itinéraire pour aller de $ à $ sans souci ?	from_to
+Je souhaite connaître le chemin le plus direct pour aller de $ à $ ?	from_to
+Comment puis-je voyager de $ à $ sans encombre ?	from_to
+Je veux aller de $ à $ en toute sécurité ?	from_to
+Quel est le trajet le plus simple pour aller de $ à $ ?	from_to
+Je cherche un itinéraire de $ à $ sans détour ?	from_to
+Comment puis-je me rendre à $ en partant de $ sans difficulté ?	to_from
+Je veux savoir quel est le meilleur chemin pour aller de $ à $ ?	from_to
+Quel est le parcours le plus rapide pour aller de $ à $ ?	from_to
+Je souhaite partir de $ pour rejoindre $ sans complications ?	from_to
+Comment puis-je atteindre $ en partant de $ sans tracas ?	to_from
+Je veux aller de $ à $ sans stress ?	from_to
+Quel est le meilleur itinéraire pour aller de $ à $ sans problème ?	from_to
+Je cherche à me rendre de $ à $ en toute tranquillité ?	from_to
+Quel est le chemin le plus simple pour aller de $ à $ ?	from_to
+Je souhaite connaître le trajet le plus direct de $ à $ ?	from_to
+Comment puis-je me rendre à $ en partant de $ sans souci ?	to_from
+Je veux savoir quel est le meilleur chemin pour aller de $ à $ ?	from_to
+Aller de $ a $	from_to

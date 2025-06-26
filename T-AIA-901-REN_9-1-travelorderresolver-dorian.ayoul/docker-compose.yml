@@ -1,0 +1,28 @@
+services:
+  front:
+    build: ./front
+    container_name: epic_front
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./front:/app
+    environment:
+      - PORT=3000
+    depends_on:
+      - back
+  back:
+    build: ./back
+    container_name: epic_back
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/app
+      - ./data:/data
+    deploy:
+      resources:
+        limits:
+          cpus: "2"
+          memory: 2048M
+        reservations:
+          cpus: "2"
+          memory: 2048M

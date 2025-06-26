@@ -1,0 +1,55 @@
+/* Home.css */
+.home-title {
+    font-size: 60px;
+    color: Black;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.home-title-div {
+    display: flex;
+    justify-content: center;
+    height: 20vh;
+}
+
+/* Title that has its text in white with outline of black*/
+.home-title-app {
+    font-size: 60px;
+    color: white;
+    text-align: center;
+    margin-bottom: 20px;
+    text-shadow: 3px 3px 5px #000000;
+}
+
+.home-container {
+    display: flex;
+    height: 80vh; /* Full screen height */
+}
+
+.home-section {
+    flex: 1; /* Takes up half the screen width */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-size: 24px;
+    color: white;
+    transition: background-color 0.3s ease;
+    background-size: cover; /* Ensures the background image covers the entire section */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Prevent the image from repeating */
+}
+
+/* Background image for SmartEpicTrip section */
+.smart-epic-trip {
+    background-image: url('../images/SmartEpicTrip.webp'); /* Use absolute path */
+}
+
+/* Background image for EpicRoadTrip section */
+.epic-road-trip {
+    background-image: url('../images/EpicRoadTripHome.webp'); /* Use absolute path */
+}
+
+.home-section:hover {
+    opacity: 0.8; /* Slight opacity change on hover */
+}

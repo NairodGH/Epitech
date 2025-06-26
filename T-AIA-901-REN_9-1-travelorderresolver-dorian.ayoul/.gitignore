@@ -1,0 +1,11 @@
+bin
+include
+lib
+share
+students_project
+pyvenv.cfg
+.idea
+__pycache__
+front/.env
+back/.env
+/venv
